@@ -82,7 +82,7 @@ template <class Type> void MergeSort<Type>::Divide(int len)//将数据按长度len分组
 	}
 }
 
-template <class Type> void MergeSort<Type>::Sort()//归并排序
+template <class Type> void MergeSort<Type>::Sort()
 {
 	int i;
 	for(i=1;length>2*i;i=2*i)
