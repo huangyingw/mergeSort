@@ -105,5 +105,6 @@ template <class Type> void MergeSort<Type>::Sort()
 		fout << "Divide with unit of->"<<i<<" length->"<<length<<endl;
 		Divide(i);
 	}
+	fout << "Merge with l->0"<<" m->"<<i<<" r->"<<length-1<<endl;
 	Merge(0,i,length-1);
 }
