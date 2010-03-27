@@ -6,6 +6,7 @@ private:
 public:
 	Type* data;
 	MergeSort<Type>(int len);
+	~MergeSort<Type>();
 	void Initial();
 	void Sort();
 	void Merge(int l,int m,int r);
@@ -18,6 +19,11 @@ template <class Type> MergeSort<Type>::MergeSort(int len)
 {
 	length=len;
 	data=new Type[length];
+}
+
+template <class Type> MergeSort<Type>::~MergeSort()
+{
+	
 }
 
 template <class Type> void MergeSort<Type>::Initial()
