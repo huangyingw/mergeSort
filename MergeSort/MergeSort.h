@@ -100,6 +100,7 @@ template <class Type> void MergeSort<Type>::Sort()
 	int i;
 	for(i=1;length>2*i;i=2*i)
 	{
+		fout << "Divide with unit of->"<<i<<" length->"<<length<<endl;
 		Divide(i);
 	}
 	Merge(0,i,length-1);
