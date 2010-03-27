@@ -3,11 +3,15 @@
 
 #include "stdafx.h"
 #include<iostream>
-using namespace std;
 #include "MergeSort.h"
+#include <fstream>
+
+using namespace std;
+ofstream fout; 
 
 void main() 
 {
+	fout.open("output.txt");
 	MergeSort<int> *mergeSort=new MergeSort<int>(29);
 	mergeSort->data[0]=4;  
 	mergeSort->data[1]=26; 
