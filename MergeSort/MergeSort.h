@@ -86,10 +86,12 @@ template <class Type> void MergeSort<Type>::Divide(int len)
 	{
 		if(i+2*len-1<length)
 		{
+			fout << "Merge with l->"<<i<<" m->"<<i+len-1<<" r->"<<i+2*len-1<<endl;
 			Merge(i,i+len-1,i+2*len-1);
 		}
 		else
 		{
+			fout << "Merge with l->"<<i<<" m->"<<i+len-1<<" r->"<<length-1<<endl;
 			Merge(i,i+len-1,length-1);
 		}
 	}
