@@ -38,9 +38,10 @@ template <class Type> void MergeSort<Type>::Print(int l,int r)
 {
 	for(int i=l;i<=r;i++)
 	{
-		cout<<data[i]<<",";
+		fout <<data[i]<<",";
+		//cout<<data[i]<<",";
 	}
-	cout<<endl;
+	fout<<endl;
 }
 
 template <class Type> void MergeSort<Type>::Merge(int l,int m,int r)
@@ -67,7 +68,7 @@ template <class Type> void MergeSort<Type>::Merge(int l,int m,int r)
 	}
 }
 
-template <class Type> void MergeSort<Type>::Divide(int len)//将数据按长度len分组合并
+template <class Type> void MergeSort<Type>::Divide(int len)
 {
 	for(int i=1;i<length;i=i+2*len)
 	{
@@ -87,7 +88,6 @@ template <class Type> void MergeSort<Type>::Sort()
 	int i;
 	for(i=1;length>2*i;i=2*i)
 	{
-		//将数据按长度i分组
 		Divide(i);
 	}
 	Merge(0,i,length-1);

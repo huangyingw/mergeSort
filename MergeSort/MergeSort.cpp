@@ -1,4 +1,4 @@
-// MergeSort.cpp : 定义控制台应用程序的入口点。
+// MergeSort.cpp :
 //
 
 #include "stdafx.h"
@@ -44,4 +44,5 @@ void main()
 	mergeSort->data[28]=25;
 	mergeSort->Sort();
 	mergeSort->Print();
+	fout.close();
 }
