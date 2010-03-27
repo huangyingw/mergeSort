@@ -1,7 +1,12 @@
+#include <fstream>
+using namespace std;
+
+
 template <class Type> class MergeSort
 {
 private:
 	int length;
+	ofstream fout; 
 
 public:
 	Type* data;
@@ -11,7 +16,7 @@ public:
 	void Sort();
 	void Merge(int l,int m,int r);
 	void Print(int l,int r);
-	void Divide(int len);//将数据按长度len分组合并
+	void Divide(int len);
 	void Print();
 };
 
@@ -19,11 +24,12 @@ template <class Type> MergeSort<Type>::MergeSort(int len)
 {
 	length=len;
 	data=new Type[length];
+	fout.open("output.txt");
 }
 
 template <class Type> MergeSort<Type>::~MergeSort()
 {
-	
+	fout.close();
 }
 
 template <class Type> void MergeSort<Type>::Initial()
