@@ -1,2 +1,12 @@
 *.ncb
 *.bak
+Debug/MergeSort.exe
+Debug/MergeSort.ilk
+Debug/MergeSort.pdb
+MergeSort/Debug/BuildLog.htm
+MergeSort/Debug/MergeSort.obj
+MergeSort/Debug/MergeSort.pch
+MergeSort/Debug/mt.dep
+MergeSort/Debug/stdafx.obj
+MergeSort/Debug/vc90.idb
+MergeSort/Debug/vc90.pdb
