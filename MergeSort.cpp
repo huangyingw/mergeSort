@@ -1,12 +1,11 @@
 // MergeSort.cpp : 定义控制台应用程序的入口点。
 //
 
-#include "stdafx.h"
 #include<iostream>
 using namespace std;
 #include "MergeSort.h"
 
-void main() 
+int main() 
 {
 	MergeSort<int> *mergeSort=new MergeSort<int>(29);
 	mergeSort->data[0]=4;  
@@ -40,4 +39,5 @@ void main()
 	mergeSort->data[28]=25;
 	mergeSort->Sort();
 	mergeSort->Print();
+	return 0;
 }
