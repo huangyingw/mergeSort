@@ -1,7 +1,6 @@
 #include <fstream>
 using namespace std;
 
-
 template <class Type> class MergeSort
 {
 private:
