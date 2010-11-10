@@ -5,12 +5,10 @@ template <class Type> class MergeSort
 {
   private:
     int length;
-    ofstream fout; 
 
   public:
     Type* data;
     MergeSort<Type>(int len);
-    ~MergeSort<Type>();
     void Initial();
     void Sort();
     void Merge(int l,int m,int r);
@@ -23,12 +21,6 @@ template <class Type> MergeSort<Type>::MergeSort(int len)
 {
   length=len;
   data=new Type[length];
-  fout.open("output.txt");
-}
-
-template <class Type> MergeSort<Type>::~MergeSort()
-{
-  fout.close();
 }
 
 template <class Type> void MergeSort<Type>::Initial()
