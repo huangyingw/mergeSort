@@ -36,7 +36,6 @@ template <class Type> void MergeSort<Type>::Print(int l,int r)
   for(int i=l;i<=r;i++)
   {
     cout <<data[i]<<",";
-    //cout<<data[i]<<",";
   }
   cout<<endl;
 }
