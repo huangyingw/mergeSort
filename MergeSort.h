@@ -25,18 +25,14 @@ template <class Type> MergeSort<Type>::MergeSort(int len)
 template <class Type> void MergeSort<Type>::Print()
 {
   for(int i=0;i<length;i++)
-  {
     cout<<data[i]<<",";
-  }
   cout<<endl;
 }
 
 template <class Type> void MergeSort<Type>::Print(int l,int r)
 {
   for(int i=l;i<=r;i++)
-  {
     cout <<data[i]<<",";
-  }
   cout<<endl;
 }
 
