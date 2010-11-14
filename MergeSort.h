@@ -41,21 +41,13 @@ template <class Type> void MergeSort<Type>::Merge(int l,int m,int r)
   int i=l;
   int j=m+1;
   while(i<=m&&j<=r)
-  {
     R1[index++]=(data[i]<data[j])?data[i++]:data[j++];
-  }
   while(i<=m)
-  {
     R1[index++]=data[i++];
-  }
   while(j<=r)
-  {
     R1[index++]=data[j++];
-  }
   for(int count=0,i=l;count<index;count++,i++)
-  {
     data[i]=R1[count];
-  }
 }
 
 template <class Type> void MergeSort<Type>::Divide(int len)
