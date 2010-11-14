@@ -24,9 +24,7 @@ template <class Type> MergeSort<Type>::MergeSort(int len)
 
 template <class Type> void MergeSort<Type>::Print()
 {
-  for(int i=0;i<length;i++)
-    cout<<data[i]<<",";
-  cout<<endl;
+  Print(0,length-1);
 }
 
 template <class Type> void MergeSort<Type>::Print(int l,int r)
