@@ -69,12 +69,12 @@ template <class Type> void MergeSort<Type>::Divide(int len)
 
 template <class Type> void MergeSort<Type>::Sort()
 {
-  int i;
-  for(i=1;2*i<length;i=2*i)
+  int unit;
+  for(unit=1;2*unit<length;unit=2*unit)
   {
-    cout << "Divide with unit of->"<<i<<" length->"<<length<<endl;
-    Divide(i);
+    cout << "Divide with unit of->"<<unit<<" length->"<<length<<endl;
+    Divide(unit);
   }
-  cout << "Merge with l->0"<<" m->"<<i<<" r->"<<length-1<<endl;
-  Merge(0,i,length-1);
+  cout << "Merge with l->0"<<" m->"<<unit<<" r->"<<length-1<<endl;
+  Merge(0,unit,length-1);
 }

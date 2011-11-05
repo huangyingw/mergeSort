@@ -3,7 +3,7 @@
 
 int main()
 {
-  MergeSort<int> *mergeSort=new MergeSort<int>(29);
+  MergeSort<int> *mergeSort=new MergeSort<int>(30);
   mergeSort->data[0]=4;
   mergeSort->data[1]=26;
   mergeSort->data[2]=22;
@@ -33,6 +33,7 @@ int main()
   mergeSort->data[26]=7;
   mergeSort->data[27]=3;
   mergeSort->data[28]=25;
+  mergeSort->data[29]=25;
   mergeSort->Sort();
   mergeSort->Print();
   return 0;
