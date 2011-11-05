@@ -1,3 +1,3 @@
-OBJECTS = MergeSort.exe
+OBJECTS = mergeSort.exe
 include ../../GNU_makefile_template
-LOCFLAGS = -I../MergeSort
+LOCFLAGS = -I../mergeSort

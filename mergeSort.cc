@@ -1,5 +1,5 @@
 #include<iostream>
-#include "MergeSort.h"
+#include "mergeSort.h"
 
 int main()
 {
