@@ -70,7 +70,7 @@ template <class Type> void MergeSort<Type>::Divide(int len)
 template <class Type> void MergeSort<Type>::Sort()
 {
   int i;
-  for(i=1;length>2*i;i=2*i)
+  for(i=1;2*i<length;i=2*i)
   {
     cout << "Divide with unit of->"<<i<<" length->"<<length<<endl;
     Divide(i);
