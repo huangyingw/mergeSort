@@ -1,2 +1,4 @@
 *.ncb
-*.bak
+*.bakoutput.cc
+output.cc
+mergeSort.exe

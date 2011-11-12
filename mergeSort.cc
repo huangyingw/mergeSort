@@ -3,7 +3,7 @@
 
 #include<iostream>
 using namespace std;
-#include "MergeSort.h"
+#include "mergeSort.h"
 
 int main() 
 {

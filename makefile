@@ -1,6 +1,6 @@
-run : MergeSort.o
-	g++ -o run MergeSort.o
-MergeSort.o : MergeSort.cpp MergeSort.h
-	g++ -c MergeSort.cpp
+mergeSort.exe : mergeSort.o
+	g++ -o mergeSort.exe mergeSort.o
+mergeSort.o : mergeSort.cc mergeSort.h
+	g++ -c mergeSort.cc 
 clean :
-	rm run MergeSort.o
+	rm mergeSort.exe mergeSort.o
