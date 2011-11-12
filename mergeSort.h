@@ -85,7 +85,7 @@ template <class Type> void MergeSort<Type>::Divide(int len)//将数据按长度len分组
 template <class Type> void MergeSort<Type>::Sort()
 {
   int unit;
-  for(unit=1;length>2*unit;unit=2*unit)
+  for(unit=1;length>2*unit;unit*=2)
   {
     Divide(unit);
   }
