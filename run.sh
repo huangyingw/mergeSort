@@ -1,2 +1,2 @@
 make -B \
-&& ./MergeSort.exe
+&& ./mergeSort.exe
