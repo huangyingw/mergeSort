@@ -35,13 +35,14 @@ class MergeSort {
 	}
 
 	void mergeSort(int left, int right) {
-		while (left < right) {
-			System.out.print("Now mergeSort," + left + "," + right + "->");
-			Print(left, right);
+		if (left < right) {
 			int pivot = (left + right) / 2;
 			mergeSort(left, pivot);
 			mergeSort(pivot + 1, right);
-			// merge(left, pivot, right);
+			merge(left, pivot, right);
+			System.out.print("Now mergeSort," + left + "," + right + "->");
+			Print(left, right);
+
 		}
 	}
 
