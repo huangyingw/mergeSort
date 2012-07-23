@@ -3,12 +3,11 @@ public class MergeSort {
 		new MergeSort();
 	}
 
-	public int data[] = { 23, 342, 42, 83, 3288, 3288, 42, 6843, 424, 341,
-			83242 };
+	public int data[] = { 10, 9, 8, 7, 6, 5, 8, 4, 3, 2, 1 };
 
 	public MergeSort() {
-		merge_sort(1, data.length - 1);
-		for (int i = 1; i <= data.length - 1; i++)
+		merge_sort(0, data.length - 1);
+		for (int i = 0; i <= data.length - 1; i++)
 			System.out.print(data[i] + ",");
 	}
 
