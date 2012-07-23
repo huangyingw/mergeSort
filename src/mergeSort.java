@@ -1,10 +1,6 @@
 class MergeSort {
 	private int[] data;
 
-	private int[] s1;
-
-	private int[] s2;
-
 	MergeSort(int[] data) {
 		this.data = data;
 	}
@@ -40,6 +36,8 @@ class MergeSort {
 
 	void mergeSort(int left, int right) {
 		while (left < right) {
+			System.out.print("Now mergeSort," + left + "," + right + "->");
+			Print(left, right);
 			int pivot = Partition(left, right);
 			mergeSort(left, pivot);
 			mergeSort(pivot + 1, right);
