@@ -1,5 +1,6 @@
 public class MergeSort {
-	public int a[] = { 23, 342, 42, 83, 3288, 3288, 42, 6843, 424, 341, 83242 };
+	public int data[] = { 23, 342, 42, 83, 3288, 3288, 42, 6843, 424, 341,
+			83242 };
 
 	public void merge_sort(int low, int high) {
 		int mid;
@@ -19,42 +20,34 @@ public class MergeSort {
 		j = mid + 1;
 
 		while ((h <= mid) && (j <= high)) {
-			if (a[h] <= a[j]) {
-				b[i] = a[h];
+			if (data[h] <= data[j]) {
+				b[i] = data[h];
 				h++;
 			} else {
-				b[i] = a[j];
+				b[i] = data[j];
 				j++;
 			}
 			i++;
 		}
 		if (h > mid) {
 			for (k = j; k <= high; k++) {
-				b[i] = a[k];
+				b[i] = data[k];
 				i++;
 			}
 		} else {
 			for (k = h; k <= mid; k++) {
-				b[i] = a[k];
+				b[i] = data[k];
 				i++;
 			}
 		}
 		for (k = low; k <= high; k++)
-			a[k] = b[k];
+			data[k] = b[k];
 	}
 
 	public MergeSort() {
-		int num, i;
-
-		merge_sort(1, a.length - 1);
-		System.out.println();
-		System.out.println("So, the sorted list (using MERGE SORT) will be :");
-		System.out.println();
-		System.out.println();
-
-		for (i = 1; i <= a.length - 1; i++)
-			System.out.print(a[i] + "    ");
-
+		merge_sort(1, data.length - 1);
+		for (int i = 1; i <= data.length - 1; i++)
+			System.out.print(data[i] + ",");
 	}
 
 	public static void main(String[] args) {
