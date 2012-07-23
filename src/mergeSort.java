@@ -38,10 +38,10 @@ class MergeSort {
 		while (left < right) {
 			System.out.print("Now mergeSort," + left + "," + right + "->");
 			Print(left, right);
-			int pivot = Partition(left, right);
+			int pivot = (left + right) / 2;
 			mergeSort(left, pivot);
 			mergeSort(pivot + 1, right);
-			merge(left, pivot, right);
+			// merge(left, pivot, right);
 		}
 	}
 
