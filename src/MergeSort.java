@@ -1,15 +1,15 @@
 public class MergeSort {
+	public static void main(String[] args) {
+		new MergeSort();
+	}
+
 	public int data[] = { 23, 342, 42, 83, 3288, 3288, 42, 6843, 424, 341,
 			83242 };
 
-	public void merge_sort(int low, int high) {
-		int mid;
-		if (low < high) {
-			mid = (low + high) / 2;
-			merge_sort(low, mid);
-			merge_sort(mid + 1, high);
-			merge(low, mid, high);
-		}
+	public MergeSort() {
+		merge_sort(1, data.length - 1);
+		for (int i = 1; i <= data.length - 1; i++)
+			System.out.print(data[i] + ",");
 	}
 
 	public void merge(int low, int mid, int high) {
@@ -44,13 +44,13 @@ public class MergeSort {
 			data[k] = b[k];
 	}
 
-	public MergeSort() {
-		merge_sort(1, data.length - 1);
-		for (int i = 1; i <= data.length - 1; i++)
-			System.out.print(data[i] + ",");
-	}
-
-	public static void main(String[] args) {
-		new MergeSort();
+	public void merge_sort(int low, int high) {
+		int mid;
+		if (low < high) {
+			mid = (low + high) / 2;
+			merge_sort(low, mid);
+			merge_sort(mid + 1, high);
+			merge(low, mid, high);
+		}
 	}
 }
