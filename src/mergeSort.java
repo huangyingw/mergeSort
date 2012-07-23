@@ -1,93 +1,62 @@
-template <class Type> class MergeSort
-{
-  private:
-    int length;
+class MergeSort {
+	private int[] data;
 
-  public:
-    Type* data;
-    MergeSort<Type>(int len);
-    void Initial();
-    void Sort();
-    void Merge(int l,int m,int r);
-    void Print(int l,int r);
-    void Divide(int len);//将数据按长度len分组合并
-    void Print();
-};
+	MergeSort(int[] data) {
+		this.data = data;
+	}
 
-template <class Type> MergeSort<Type>::MergeSort(int len)
-{
-  length=len;
-  data=new Type[length];
-}
+	void Initial() {
 
-template <class Type> void MergeSort<Type>::Initial()
-{
+	}
 
-}
+	void Print() {
+		for (int i = 0; i < data.length; i++) {
+			System.out.print(data[i] + ",");
+		}
+		System.out.println();
+	}
 
-template <class Type> void MergeSort<Type>::Print()
-{
-  for(int i=0;i<length;i++)
-  {
-    cout<<data[i]<<",";
-  }
-  cout<<endl;
-}
+	void Print(int l, int r) {
+		for (int i = l; i <= r; i++) {
+			System.out.print(data[i] + ",");
+		}
+		System.out.println();
+	}
 
-template <class Type> void MergeSort<Type>::Print(int l,int r)
-{
-  for(int i=l;i<=r;i++)
-  {
-    cout<<data[i]<<",";
-  }
-  cout<<endl;
-}
+	void Merge(int l, int m, int r) {
+		int index = 0;
+		int i = l;
+		int j = m + 1;
+		while (i <= m && j <= r) {
+			data[index++] = (data[i] < data[j]) ? data[i++] : data[j++];
+		}
+		while (i <= m) {
+			data[index++] = data[i++];
+		}
+		while (j <= r) {
+			data[index++] = data[j++];
+		}
+		int count = 0;
+		for (i = l; count < index; count++, i++) {
+			data[i] = data[count];
+		}
+	}
 
-template <class Type> void MergeSort<Type>::Merge(int l,int m,int r)
-{
-  Type* R1=new Type[r-l+1];
-  int index=0;
-  int i=l;
-  int j=m+1;
-  while(i<=m&&j<=r)
-  {
-    R1[index++]=(data[i]<data[j])?data[i++]:data[j++];
-  }
-  while(i<=m)
-  {
-    R1[index++]=data[i++];
-  }
-  while(j<=r)
-  {
-    R1[index++]=data[j++];
-  }
-  for(int count=0,i=l;count<index;count++,i++)
-  {
-    data[i]=R1[count];
-  }
-}
+	void Divide(int len) {
+		for (int i = 1; i < data.length; i = i + 2 * len) {
+			if (i + 2 * len - 1 < data.length) {
+				Merge(i, i + len - 1, i + 2 * len - 1);
+			} else {
+				Merge(i, i + len - 1, data.length - 1);
+			}
+		}
+	}
 
-template <class Type> void MergeSort<Type>::Divide(int len)//将数据按长度len分组合并
-{
-  for(int i=1;i<length;i=i+2*len)
-  {
-    if(i+2*len-1<length)
-    {
-      Merge(i,i+len-1,i+2*len-1);
-    }
-    else
-    {
-      Merge(i,i+len-1,length-1);
-    }
-  }
-}
-
-template <class Type> void MergeSort<Type>::Sort()
-{
-  int unit;
-  for(unit=1;length>2*unit;unit*=2)
-  {
-    Divide(unit);
-  }
-  Merge(0,unit,length-1);
+	void Sort() {
+		int unit;
+		for (unit = 1; data.length > 2 * unit; unit *= 2) {
+			Divide(unit);
+		}
+		Merge(0, unit, data.length - 1);
+	}
 }
