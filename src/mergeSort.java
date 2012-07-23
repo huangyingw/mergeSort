@@ -1,12 +1,54 @@
 class MergeSort {
 	private int[] data;
 
+	private int[] s1;
+
+	private int[] s2;
+
 	MergeSort(int[] data) {
 		this.data = data;
 	}
 
 	void Initial() {
 
+	}
+
+	private void merge(int left, int pivot, int right) {
+		// TODO Auto-generated method stub
+		int index = 0;
+		int i = left;
+		int j = pivot + 1;
+		while (i <= pivot && j <= right) {
+			data[index++] = (data[i] < data[j]) ? data[i++] : data[j++];
+		}
+		while (i <= pivot) {
+			data[index++] = data[i++];
+		}
+		while (j <= right) {
+			data[index++] = data[j++];
+		}
+		int count = 0;
+		for (i = left; count < index; count++, i++) {
+			data[i] = data[count];
+		}
+	}
+
+	public void mergeSort() {
+		// TODO Auto-generated method stub
+		mergeSort(0, data.length - 1);
+	}
+
+	void mergeSort(int left, int right) {
+		while (left < right) {
+			int pivot = Partition(left, right);
+			mergeSort(left, pivot);
+			mergeSort(pivot + 1, right);
+			merge(left, pivot, right);
+		}
+	}
+
+	int Partition(int left, int right) {
+		return (left + right) / 2;
 	}
 
 	void Print() {
@@ -21,42 +63,5 @@ class MergeSort {
 			System.out.print(data[i] + ",");
 		}
 		System.out.println();
-	}
-
-	void Merge(int l, int m, int r) {
-		int index = 0;
-		int i = l;
-		int j = m + 1;
-		while (i <= m && j <= r) {
-			data[index++] = (data[i] < data[j]) ? data[i++] : data[j++];
-		}
-		while (i <= m) {
-			data[index++] = data[i++];
-		}
-		while (j <= r) {
-			data[index++] = data[j++];
-		}
-		int count = 0;
-		for (i = l; count < index; count++, i++) {
-			data[i] = data[count];
-		}
-	}
-
-	void Divide(int len) {
-		for (int i = 1; i < data.length; i = i + 2 * len) {
-			if (i + 2 * len - 1 < data.length) {
-				Merge(i, i + len - 1, i + 2 * len - 1);
-			} else {
-				Merge(i, i + len - 1, data.length - 1);
-			}
-		}
-	}
-
-	void Sort() {
-		int unit;
-		for (unit = 1; data.length > 2 * unit; unit *= 2) {
-			Divide(unit);
-		}
-		Merge(0, unit, data.length - 1);
 	}
 }
