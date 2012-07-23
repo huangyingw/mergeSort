@@ -1,2 +1,0 @@
-make -B \
-&& ./mergeSort.exe
