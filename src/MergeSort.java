@@ -1,7 +1,5 @@
-import java.util.Scanner;
-
 public class MergeSort {
-	public int a[] = new int[50];
+	public int a[] = { 23, 342, 42, 83, 3288, 3288, 42, 6843, 424, 341, 83242 };
 
 	public void merge_sort(int low, int high) {
 		int mid;
@@ -48,26 +46,13 @@ public class MergeSort {
 	public MergeSort() {
 		int num, i;
 
-		System.out.println("             MERGE SORT PROGRAM            ");
-
-		System.out.println();
-		System.out.println();
-		System.out
-				.println("Please Enter THE No. OF ELEMENTS you want to sort[THEN PRESS ENTER]:");
-		num = new Scanner(System.in).nextInt();
-		System.out.println();
-		System.out.println("Now, Please Enter the (" + num
-				+ ") nos. [THEN PRESS ENTER]:");
-		for (i = 1; i <= num; i++) {
-			a[i] = new Scanner(System.in).nextInt();
-		}
-		merge_sort(1, num);
+		merge_sort(1, a.length - 1);
 		System.out.println();
 		System.out.println("So, the sorted list (using MERGE SORT) will be :");
 		System.out.println();
 		System.out.println();
 
-		for (i = 1; i <= num; i++)
+		for (i = 1; i <= a.length - 1; i++)
 			System.out.print(a[i] + "    ");
 
 	}
