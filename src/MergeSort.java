@@ -36,7 +36,7 @@ class MergeSort {
 		index = 0;
 		right = mid + 1;
 
-		while (left <= mid && right <= high && index < newArr.length) {
+		while (left <= mid && right <= high) {
 			if (data[left] <= data[right]) {
 				newArr[index++] = data[left++];
 			} else {
@@ -48,7 +48,7 @@ class MergeSort {
 				newArr[index++] = data[k];
 			}
 		} else {
-			for (int k = left; k <= mid && index < newArr.length; k++) {
+			for (int k = left; k <= mid; k++) {
 				newArr[index++] = data[k];
 			}
 		}
