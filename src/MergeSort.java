@@ -30,34 +30,31 @@ class MergeSort {
 	}
 
 	public void mergeEffecient(int low, int mid, int high) {
-		int left, i, right;
-		int newArr[] = new int[50];
+		int left, index, right;
+		int newArr[] = new int[high - low + 1];
 		left = low;
-		i = low;
+		index = 0;
 		right = mid + 1;
 
-		while ((left <= mid) && (right <= high)) {
+		while (left <= mid && right <= high && index < newArr.length) {
 			if (data[left] <= data[right]) {
-				newArr[i++] = data[left];
-				left++;
+				newArr[index++] = data[left++];
 			} else {
-				newArr[i++] = data[right];
-				right++;
+				newArr[index++] = data[right++];
 			}
 		}
 		if (left > mid) {
 			for (int k = right; k <= high; k++) {
-				newArr[i] = data[k];
-				i++;
+				newArr[index++] = data[k];
 			}
 		} else {
-			for (int k = left; k <= mid; k++) {
-				newArr[i] = data[k];
-				i++;
+			for (int k = left; k <= mid && index < newArr.length; k++) {
+				newArr[index++] = data[k];
 			}
 		}
+		index = 0;
 		for (int k = low; k <= high; k++)
-			data[k] = newArr[k];
+			data[k] = newArr[index++];
 	}
 
 	public void mergeSort() {
