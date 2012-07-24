@@ -23,15 +23,12 @@ class MergeSort {
 				newArr[index++] = data[right++];
 			}
 		}
-		if (left > mid) {
-			for (int k = right; k <= high; k++) {
-				newArr[index++] = data[k];
-			}
-		} else {
-			for (int k = left; k <= mid; k++) {
-				newArr[index++] = data[k];
-			}
-		}
+    while(right<=high){
+      newArr[index++]=data[right++];
+    }
+    while(left<=mid){
+      newArr[index++]=data[left++];
+    }
 		index = 0;
 		for (int k = low; k <= high; k++)
 			data[k] = newArr[index++];
