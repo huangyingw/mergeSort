@@ -10,38 +10,6 @@ class MergeSort {
 	}
 
 	public void merge(int low, int mid, int high) {
-		int h, i, j, k;
-		int b[] = new int[50];
-		h = low;
-		i = low;
-		j = mid + 1;
-
-		while ((h <= mid) && (j <= high)) {
-			if (data[h] <= data[j]) {
-				b[i] = data[h];
-				h++;
-			} else {
-				b[i] = data[j];
-				j++;
-			}
-			i++;
-		}
-		if (h > mid) {
-			for (k = j; k <= high; k++) {
-				b[i] = data[k];
-				i++;
-			}
-		} else {
-			for (k = h; k <= mid; k++) {
-				b[i] = data[k];
-				i++;
-			}
-		}
-		for (k = low; k <= high; k++)
-			data[k] = b[k];
-	}
-
-	public void mergeEffecient(int low, int mid, int high) {
 		int left, index, right;
 		int newArr[] = new int[high - low + 1];
 		left = low;
@@ -79,11 +47,7 @@ class MergeSort {
 			int pivot = (left + right) / 2;
 			mergeSort(left, pivot);
 			mergeSort(pivot + 1, right);
-			// mergeEffecient(left, pivot, right);
-			mergeEffecient(left, pivot, right);
-			// System.out.print("Now mergeSort," + left + "," + right + "->");
-			// Print(left, right);
-
+			merge(left, pivot, right);
 		}
 	}
 
