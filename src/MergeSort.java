@@ -9,7 +9,7 @@ class MergeSort {
 
   }
 
-  public void merge(int low, int mid, int high) {
+	public void merge(int low, int mid, int high) {
     int left, index, right;
     int newArr[] = new int[high - low + 1];
     left = low;
@@ -28,8 +28,8 @@ class MergeSort {
     while(left<=mid)
       newArr[index++]=data[left++];
     index = 0;
-    for (int k = low; k <= high; k++)
-      data[k] = newArr[index++];
+    while(low<=high)
+      data[low++] = newArr[index++];
   }
 
   public void mergeSort() {
