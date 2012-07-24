@@ -64,12 +64,13 @@ class MergeSort {
 
 	void mergeSort(int left, int right) {
 		if (left < right) {
+			System.out.println("Now mergeSort," + left + "," + right + "->");
 			int pivot = (left + right) / 2;
 			mergeSort(left, pivot);
 			mergeSort(pivot + 1, right);
 			mergeEffecient(left, pivot, right);
-			System.out.print("Now mergeSort," + left + "," + right + "->");
-			Print(left, right);
+
+			// Print(left, right);
 
 		}
 	}
