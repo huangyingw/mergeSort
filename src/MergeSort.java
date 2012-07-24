@@ -1,5 +1,5 @@
 class MergeSort {
-	private int[] data;
+	public int[] data;
 
 	MergeSort(int[] data) {
 		this.data = data;
@@ -80,7 +80,7 @@ class MergeSort {
 			mergeSort(left, pivot);
 			mergeSort(pivot + 1, right);
 			// mergeEffecient(left, pivot, right);
-			merge(left, pivot, right);
+			mergeEffecient(left, pivot, right);
 			// System.out.print("Now mergeSort," + left + "," + right + "->");
 			// Print(left, right);
 
