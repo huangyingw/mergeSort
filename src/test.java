@@ -40,5 +40,9 @@ public class test {
 		mergeSort.data = new int[] { 9, 9, 4, 3, 2, 8, 1, 5, 12, 3 };
 		mergeSort.mergeSort();
 		mergeSort.Print();
+
+		mergeSort.data = new int[] { 9, 9, 9, 9, 9, 9 };
+		mergeSort.mergeSort();
+		mergeSort.Print();
 	}
 }
